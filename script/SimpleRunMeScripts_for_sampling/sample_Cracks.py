@@ -49,6 +49,7 @@ opt2 = "l=" + str(config['correlation_length']).replace('.', '_')
 case = opt1 + "__" + opt2
 EXPORTDIR = os.path.join(EXPORTDIR, case)
 if not os.path.exists(EXPORTDIR): os.mkdir(EXPORTDIR)
+if not os.path.exists(EXPORTDIR): os.makedirs(EXPORTDIR) # exist_ok=True
 
 settingsfilename = os.path.abspath(os.path.join(EXPORTDIR, "settings.txt"))
 with open(settingsfilename, 'w') as file:
